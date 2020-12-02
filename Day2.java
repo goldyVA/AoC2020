@@ -44,16 +44,10 @@ public class Day2
     	{
     		if(password.substring(a,a+1).equals(letter) )
     			number++;
-    		
     	}
     	
     	if(number >= low && number <= high)
-    		count++;
-    	
-    	
-    	
-    	//System.out.println(low + " " + high +" "+letter+ " "+password);
-    	
+    		count++;	
     }
     System.out.println(count);
     
@@ -82,11 +76,7 @@ public class Day2
     	{
     		count++;
     	}
-    	
-    	
     }
     System.out.println(count);
-    
-    
   }
 }
