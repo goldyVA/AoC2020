@@ -21,8 +21,6 @@ public class Day1
     {	
     }
     
-   
-    
     //part 1
     for(int i = 0; i < list.size()-1; i++)
     {
@@ -34,8 +32,7 @@ public class Day1
     				System.out.println(list.get(i)*list.get(j) + " " + list.get(i)+ " "+ list.get(j));
     			}
     	}
-    }
-    
+    }  
     
     int count = 0;
     //part 2
@@ -52,10 +49,6 @@ public class Day1
     			}
     		}
     	}
-    }
-    
-    
-    
-    
+    } 
   }
 }
