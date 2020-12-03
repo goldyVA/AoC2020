@@ -1,9 +1,10 @@
+
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.*; // Import the Scanner class to read text files
 
 
-public class Day3Updated 
+public class Day3Updated
 {
   public static void main(String[] args) 
   {
@@ -33,95 +34,47 @@ public class Day3Updated
     	count++;
     }
     
-    //part1
-    count = 0;
-    int sum = 0;
-    for(int i = 0; i < array.length;i++)
-    {
-    	if(array[i][count] == '#')
-    		sum++;
-    	
-    	count = count +3;
-    	if(count>30)
-    		count = count - 31;
-    }
+    //part 1
+    System.out.println(part1(array, 3, 1));
     
-    System.out.println(sum);
-    
-    
-    //part2
-    
-    //first
-    count = 0;
-    long product = 1;
-    sum = 0;
-    for(int i = 0; i < array.length;i++)
-    {
-    	if(array[i][count] == '#')
-    		sum++;
-    	
-    	count = count +1;
-    	if(count>30)
-    		count = count - 31;
-    }
-    product *= sum;
-    
-    //second
-    count = 0;
-    sum = 0;
-    for(int i = 0; i < array.length;i++)
-    {
-    	if(array[i][count] == '#')
-    		sum++;
-    	
-    	count = count +3;
-    	if(count>30)
-    		count = count - 31;
-    }
-    product *= sum;
-    
-  //third
-    count = 0;
-    sum = 0;
-    for(int i = 0; i < array.length;i++)
-    {
-    	if(array[i][count] == '#')
-    		sum++;
-    	
-    	count = count +5;
-    	if(count>30)
-    		count = count - 31;
-    }
-    product *= sum;
-    
-  //fourth
-    count = 0;
-    sum = 0;
-    for(int i = 0; i < array.length;i++)
-    {
-    	if(array[i][count] == '#')
-    		sum++;
-    	
-    	count = count +7;
-    	if(count>30)
-    		count = count - 31;
-    }
-    product *= sum;
-    
-  //fifth
-    count = 0;
-    sum = 0;
-    for(int i = 0; i < array.length;i+=2)
-    {
-    	if(array[i][count] == '#')
-    		sum++;
-    	
-    	count = count +1;
-    	if(count>30)
-    		count = count - 31;
-    }
-    product *= sum;
-    
+    //part 2
+    long product = part2(array, 1, 1) * part2(array, 3, 1) * part2(array, 5, 1) * part2(array, 7, 1) * part2(array, 1, 2);
     System.out.println(product);
+    
   }
+  
+  public static long part1(char[][] array, int right, int down)
+  {
+	  	int count = 0;
+	    int sum = 0;
+	    for(int i = 0; i < array.length;i+=down)
+	    {
+	    	if(array[i][count] == '#')
+	    		sum++;
+	    	
+	    	count = count +right;
+	    	if(count>30)
+	    		count = count - 31;
+	    }
+	    
+	    return sum;
+  }
+  
+  public static long part2(char[][] array, int right, int down)
+  {
+	  	int count = 0;
+	    
+	  	int sum = 0;
+	    for(int i = 0; i < array.length;i+=down)
+	    {
+	    	if(array[i][count] == '#')
+	    		sum++;
+	    	
+	    	count = count +right;
+	    	if(count>30)
+	    		count = count - 31;
+	    }
+	    return sum;
+  }
+  
 }
