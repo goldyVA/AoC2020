@@ -35,7 +35,6 @@ public class Day6
     	{
     		x+=list.get(i);
     	}
-    	
     	if(i==list.size()-1)
     	{
     		x+=list.get(i);
@@ -73,7 +72,6 @@ public class Day6
     	{
     		x=x + " " +list.get(i);
     	}
-    	
     	if(i==list.size()-1)
     	{
     		x= x + " " +list.get(i);
@@ -82,7 +80,7 @@ public class Day6
     	}	
     }
     
-   
+    //part 2
     sum = 0;
     for(int i = 0; i <array.size(); i++)
     {
